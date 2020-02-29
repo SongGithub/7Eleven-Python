@@ -1,7 +1,8 @@
+---
 version: 2
 
 jobs:
-  build:
+  build-publish:
     working_directory: /app
     docker:
       - image: docker:17.05.0-ce-git
@@ -9,6 +10,24 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: build-docker
+          name: "build docker image"
           command: |
             docker build -t 711fuel .
+      - run:
+          name: "tag docker image"
+          command: |
+            docker tag 711fuel songgithub/7eleven-python:${CIRCLE_SHA1}
+      - run:
+          name: publish docker image
+          command: |
+            env
+            docker login -u ${DOCKER_USER} -p ${DOCKER_TOKEN}
+            docker push songgithub/7eleven-python:${CIRCLE_SHA1}
+
+# using workflow in order to use context to inject sensitive params.
+workflows:
+  version: 2
+  build-publish:
+    jobs:
+      - build-publish:
+          context: dockerhub-songgithub
