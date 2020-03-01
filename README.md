@@ -41,14 +41,14 @@ docker run -d \
 And browse to [localhost URL](http://localhost:5000)
 
 Other environment variables you can specify at runtime:
-
-`BASE_URL`: The URL for the 7-Eleven API.
-`TZ`: Display time using the chosen timezone.
-`PRICE_URL`: The URL for the fuel price API (currently defaults to the API at projectzerothree.info)
-`DEVICE_NAME`: The name of the device reported on login to the 7-Eleven API (set by default in settings.py)
-`OS_VERSION`: The Android OS version reported on login to the 7-Eleven API (set by default in settings.py)
-`APP_VERSION`: The 7-Eleven app version reported on login to the 7-Eleven API (set by default in settings.py)
-
+```
+BASE_URL: The URL for the 7-Eleven API.
+TZ: Display time using the chosen timezone.
+PRICE_URL: The URL for the fuel price API (currently defaults to the API at projectzerothree.info)
+DEVICE_NAME: The name of the device reported on login to the 7-Eleven API (set by default in settings.py)
+OS_VERSION: The Android OS version reported on login to the 7-Eleven API (set by default in settings.py)
+APP_VERSION: The 7-Eleven app version reported on login to the 7-Eleven API (set by default in settings.py)
+```
 An example of running with environmental variables is as follows:
 
 ```bash
