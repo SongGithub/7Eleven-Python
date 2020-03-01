@@ -27,11 +27,7 @@ Copy the crt and key files to the same directory as app.py and uncomment the las
 
 `app.run(host='0.0.0.0',port=443,ssl_context=context)`
 
-# Usage
-It's very simple to use  7-Eleven Python. Simply run the script with either of the following commands `python3 app.py` or  `python app.py`. After you have started the program all you have to do is open your web browser and navigate to `http://[your-local-ip-address]:5000` i.e. `http://192.168.1.100:5000`. Then simply login with your 7-Eleven email and password, and click either automatic lock in or manually enter a postcode that you want to lock in from.
-
-# Docker Usage
-Clone the Git repo to your Docker host and build the image:
+## Docker Usage
 
 `docker build -t fuellock .`
 
@@ -42,7 +38,7 @@ docker run -d \
   -p 5000:5000 \
   fuellock
 ```
-And browse to http://[Docker host IP]:5000
+And browse to [localhost URL](http://localhost:5000)
 
 Other environment variables you can specify at runtime:
 
