@@ -14,15 +14,14 @@ jobs:
           command: |
             docker build -t 711fuel .
       - run:
-          name: "tag docker image"
-          command: |
-            docker tag 711fuel songgithub/7eleven-python:${CIRCLE_SHA1}
-      - run:
           name: publish docker image
+          environment:
+            DOCKER_REPO: songgithub/7eleven-python
           command: |
             env
             docker login -u ${DOCKER_USER} -p ${DOCKER_TOKEN}
-            docker push songgithub/7eleven-python:${CIRCLE_SHA1:0:5}
+            docker tag 711fuel ${DOCKER_REPO}:${CIRCLE_SHA1:0:5}
+            docker push ${DOCKER_REPO}:${CIRCLE_SHA1:0:5}
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
