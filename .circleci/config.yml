@@ -22,7 +22,7 @@ jobs:
           command: |
             env
             docker login -u ${DOCKER_USER} -p ${DOCKER_TOKEN}
-            docker push songgithub/7eleven-python:${CIRCLE_SHA1}
+            docker push songgithub/7eleven-python:${CIRCLE_SHA1:0:5}
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
