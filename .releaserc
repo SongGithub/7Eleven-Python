@@ -9,7 +9,7 @@
         "@semantic-release/commit-analyzer", {
             "preset": "angular"
         },
-        "@semantic-release/release-note-generator",
+        "@semantic-release/release-notes-generator",
         "@semantic-release/github", {
             "successComment": false,
             "failComment": false,
