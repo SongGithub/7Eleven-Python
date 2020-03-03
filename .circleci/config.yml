@@ -24,13 +24,13 @@ jobs:
             docker push ${DOCKER_REPO}:${CIRCLE_SHA1:0:5}
   release:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10.18.0
     steps:
       - checkout
       - run:
           name: install & execute release module
           command: |
-            npx semantic-release
+            npx semantic-release@17.0.4
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
