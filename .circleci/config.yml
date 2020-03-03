@@ -30,7 +30,6 @@ jobs:
       - run:
           name: install & execute release module
           command: |
-            env
             echo "current branch is $CIRCLE_BRANCH"
             npx semantic-release@17.0.4 --branch $CIRCLE_BRANCH
 

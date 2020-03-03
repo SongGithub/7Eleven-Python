@@ -4,5 +4,18 @@
     "branches": [
         "master",
         "release"
+    ],
+    "plugins": [
+        "@semantic-release/commit-analyzer", {
+            "preset": "angular"
+        },
+        "@semantic-release/release-note-generator",
+        "@semantic-release/github", {
+            "successComment": false,
+            "failComment": false,
+        },
+        "@semantic-release/exec", {
+            "successCommand": "echo ok"
+        }
     ]
 }
