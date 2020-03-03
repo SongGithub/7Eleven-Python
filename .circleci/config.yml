@@ -29,4 +29,5 @@ workflows:
   build-publish:
     jobs:
       - build-publish:
+          # the context contains sensitive env var DOCKER_USER and DOCKER_TOKEN
           context: dockerhub-songgithub
