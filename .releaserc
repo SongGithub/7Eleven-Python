@@ -1,4 +1,8 @@
 {
     "debug": true,
-    "ci": true
+    "ci": true,
+    "branches": [
+        "master",
+        "release"
+    ]
 }
