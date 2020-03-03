@@ -31,6 +31,7 @@ jobs:
           name: install & execute release module
           command: |
             echo 'current branch is ${CIRCLE_BRANCH}'
+            echo "current branch is $CIRCLE_BRANCH"
             npx semantic-release@17.0.4 --branch ${CIRCLE_BRANCH}
 
 # using workflow in order to use context to inject sensitive params.
