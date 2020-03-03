@@ -33,7 +33,7 @@ jobs:
             echo "current branch is $CIRCLE_BRANCH"
             npm install -g semantic-release@17.0.4
             npm install -g semantic-release/exec
-            ./semantic-release --branch $CIRCLE_BRANCH
+            semantic-release --branch $CIRCLE_BRANCH --debug
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
