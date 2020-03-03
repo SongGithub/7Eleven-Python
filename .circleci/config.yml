@@ -29,8 +29,6 @@ jobs:
       - checkout
       - run:
           name: install & execute release module
-          environment:
-            GH_TOKEN: ${GITHUB_TOKEN}
           command: |
             npx semantic-release
 
@@ -40,7 +38,7 @@ workflows:
   build-publish:
     jobs:
       - release:
-        context: github-songgithub
+          context: github-songgithub
       # - build-publish:
       #     # the context contains sensitive env var DOCKER_USER and DOCKER_TOKEN
       #     context: dockerhub-songgithub
