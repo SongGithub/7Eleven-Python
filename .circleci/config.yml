@@ -30,7 +30,7 @@ jobs:
       - run:
           name: install & execute release module
           command: |
-            npx semantic-release@17.0.4
+            npx semantic-release@17.0.4 --branch ${CIRCLE_BRANCH}
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
