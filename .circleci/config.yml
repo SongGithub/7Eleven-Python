@@ -31,10 +31,8 @@ jobs:
           name: install & execute release module
           command: |
             echo "current branch is $CIRCLE_BRANCH"
-            npm install -g semantic-release@17.0.4
-            npm install -g semantic-release/exec
-            ls -l /usr/local/lib/node_modules
-            semantic-release --branch $CIRCLE_BRANCH --debug
+            npm install semantic-release/exec
+            npx semantic-release@17.0.4 --branch $CIRCLE_BRANCH --debug
 
 # using workflow in order to use context to inject sensitive params.
 workflows:
