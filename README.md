@@ -14,8 +14,6 @@ There is also a function that will automatically search a couple of websites for
 Built Docker image has been published to the Dockerhub, so to run the app, simply:
 ```
 docker run \
-  -v $PWD:/app \
-  -w /app \
   -p 5000:5000 \
   songgithub/7eleven-python:e2e59
 ```
